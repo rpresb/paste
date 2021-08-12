@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ListItem should filter out styling props 1`] = `
-.emotion-1 {
-  color: rgb(40,42,43);
+exports[`ListItem Render should render a plain list item 1`] = `
+<DocumentFragment>
+  .emotion-1 {
+  color: rgb(18,28,45);
   font-size: 0.875rem;
-  font-family: 'Whitney SSm A','Whitney SSm B','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'Inter var experimental','Inter var',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
   line-height: 1.25rem;
   font-weight: 400;
   font-variant-numeric: tabular-nums;
@@ -13,70 +14,36 @@ exports[`ListItem should filter out styling props 1`] = `
 .emotion-0 {
   margin: 0;
   padding: 0;
-  color: rgb(40,42,43);
+  color: rgb(18,28,45);
   font-size: 0.875rem;
   line-height: 1.5rem;
-  margin-top: 0.5rem;
+  font-weight: 400;
   margin-bottom: 0.5rem;
-  font-weight: 400;
-}
-
-<div
-  className="emotion-1"
->
-  <li
-    className="emotion-0"
-    color="colorText"
-    data-paste-element="TEXT"
-    fontSize="fontSize30"
-    fontWeight="fontWeightNormal"
-  >
-    Children
-  </li>
-</div>
-`;
-
-exports[`ListItem should render a plain list item 1`] = `
-.emotion-1 {
-  color: rgb(40,42,43);
-  font-size: 0.875rem;
-  font-family: 'Whitney SSm A','Whitney SSm B','Helvetica Neue',Helvetica,Arial,sans-serif;
-  line-height: 1.25rem;
-  font-weight: 400;
-  font-variant-numeric: tabular-nums;
-}
-
-.emotion-0 {
-  margin: 0;
-  padding: 0;
-  color: rgb(40,42,43);
-  font-size: 0.875rem;
-  line-height: 1.5rem;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 400;
 }
 
 <div
-  className="emotion-1"
->
-  <li
-    className="emotion-0"
-    color="colorText"
-    data-paste-element="TEXT"
-    fontSize="fontSize30"
-    fontWeight="fontWeightNormal"
+    class="emotion-1"
   >
-    Children
-  </li>
-</div>
+    <li
+      class="emotion-0"
+      color="colorText"
+      data-paste-element="LIST_ITEM"
+      font-size="fontSize30"
+      font-weight="fontWeightNormal"
+    >
+      Children
+    </li>
+  </div>
+</DocumentFragment>
 `;
 
-exports[`Ordered List should allow marginTop and marginBottom styling props 1`] = `
-.emotion-1 {
-  color: rgb(40,42,43);
+exports[`Ordered List Render should render a plain ordered list wrapper 1`] = `
+<DocumentFragment>
+  .emotion-1 {
+  color: rgb(18,28,45);
   font-size: 0.875rem;
-  font-family: 'Whitney SSm A','Whitney SSm B','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'Inter var experimental','Inter var',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
   line-height: 1.25rem;
   font-weight: 400;
   font-variant-numeric: tabular-nums;
@@ -85,71 +52,36 @@ exports[`Ordered List should allow marginTop and marginBottom styling props 1`] 
 .emotion-0 {
   margin: 0;
   padding: 0;
-  color: rgb(40,42,43);
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  margin-left: 1.5rem;
-  font-weight: 400;
-}
-
-<div
-  className="emotion-1"
->
-  <ol
-    className="emotion-0"
-    color="colorText"
-    data-paste-element="TEXT"
-    fontSize="fontSize30"
-    fontWeight="fontWeightNormal"
-  >
-    Children
-  </ol>
-</div>
-`;
-
-exports[`Ordered List should filter out styling props 1`] = `
-.emotion-1 {
-  color: rgb(40,42,43);
-  font-size: 0.875rem;
-  font-family: 'Whitney SSm A','Whitney SSm B','Helvetica Neue',Helvetica,Arial,sans-serif;
-  line-height: 1.25rem;
-  font-weight: 400;
-  font-variant-numeric: tabular-nums;
-}
-
-.emotion-0 {
-  margin: 0;
-  padding: 0;
-  color: rgb(40,42,43);
+  color: rgb(18,28,45);
   font-size: 0.875rem;
   line-height: 1.5rem;
   margin-bottom: 1.5rem;
-  margin-left: 1.5rem;
   font-weight: 400;
+  margin-left: 1.5rem;
 }
 
 <div
-  className="emotion-1"
->
-  <ol
-    className="emotion-0"
-    color="colorText"
-    data-paste-element="TEXT"
-    fontSize="fontSize30"
-    fontWeight="fontWeightNormal"
+    class="emotion-1"
   >
-    Children
-  </ol>
-</div>
+    <ol
+      class="emotion-0"
+      color="colorText"
+      data-paste-element="ORDERED_LIST"
+      font-size="fontSize30"
+      font-weight="fontWeightNormal"
+    >
+      Children
+    </ol>
+  </div>
+</DocumentFragment>
 `;
 
-exports[`Ordered List should render a plain ordered list wrapper 1`] = `
-.emotion-1 {
-  color: rgb(40,42,43);
+exports[`Unordered List Render should render a plain unordered list wrapper 1`] = `
+<DocumentFragment>
+  .emotion-1 {
+  color: rgb(18,28,45);
   font-size: 0.875rem;
-  font-family: 'Whitney SSm A','Whitney SSm B','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'Inter var experimental','Inter var',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
   line-height: 1.25rem;
   font-weight: 400;
   font-variant-numeric: tabular-nums;
@@ -158,97 +90,26 @@ exports[`Ordered List should render a plain ordered list wrapper 1`] = `
 .emotion-0 {
   margin: 0;
   padding: 0;
-  color: rgb(40,42,43);
+  color: rgb(18,28,45);
   font-size: 0.875rem;
   line-height: 1.5rem;
   margin-bottom: 1.5rem;
-  margin-left: 1.5rem;
   font-weight: 400;
+  margin-left: 1.5rem;
 }
 
 <div
-  className="emotion-1"
->
-  <ol
-    className="emotion-0"
-    color="colorText"
-    data-paste-element="TEXT"
-    fontSize="fontSize30"
-    fontWeight="fontWeightNormal"
+    class="emotion-1"
   >
-    Children
-  </ol>
-</div>
-`;
-
-exports[`Unordered List should filter out styling props 1`] = `
-.emotion-1 {
-  color: rgb(40,42,43);
-  font-size: 0.875rem;
-  font-family: 'Whitney SSm A','Whitney SSm B','Helvetica Neue',Helvetica,Arial,sans-serif;
-  line-height: 1.25rem;
-  font-weight: 400;
-  font-variant-numeric: tabular-nums;
-}
-
-.emotion-0 {
-  margin: 0;
-  padding: 0;
-  color: rgb(40,42,43);
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  margin-bottom: 1.5rem;
-  margin-left: 1.5rem;
-  font-weight: 400;
-}
-
-<div
-  className="emotion-1"
->
-  <ul
-    className="emotion-0"
-    color="colorText"
-    data-paste-element="TEXT"
-    fontSize="fontSize30"
-    fontWeight="fontWeightNormal"
-  >
-    Children
-  </ul>
-</div>
-`;
-
-exports[`Unordered List should render a plain unordered list wrapper 1`] = `
-.emotion-1 {
-  color: rgb(40,42,43);
-  font-size: 0.875rem;
-  font-family: 'Whitney SSm A','Whitney SSm B','Helvetica Neue',Helvetica,Arial,sans-serif;
-  line-height: 1.25rem;
-  font-weight: 400;
-  font-variant-numeric: tabular-nums;
-}
-
-.emotion-0 {
-  margin: 0;
-  padding: 0;
-  color: rgb(40,42,43);
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  margin-bottom: 1.5rem;
-  margin-left: 1.5rem;
-  font-weight: 400;
-}
-
-<div
-  className="emotion-1"
->
-  <ul
-    className="emotion-0"
-    color="colorText"
-    data-paste-element="TEXT"
-    fontSize="fontSize30"
-    fontWeight="fontWeightNormal"
-  >
-    Children
-  </ul>
-</div>
+    <ul
+      class="emotion-0"
+      color="colorText"
+      data-paste-element="UNORDERED_LIST"
+      font-size="fontSize30"
+      font-weight="fontWeightNormal"
+    >
+      Children
+    </ul>
+  </div>
+</DocumentFragment>
 `;
