@@ -9,6 +9,8 @@ import {InformationIcon} from '@twilio-paste/icons/esm/InformationIcon';
 import {Label} from '@twilio-paste/label';
 import {HelpText} from '@twilio-paste/help-text';
 import type {HelpTextVariants} from '@twilio-paste/help-text';
+import {Stack} from '@twilio-paste/stack';
+import {CustomizationProvider} from '@twilio-paste/customization';
 import {Input} from '../src';
 import type {InputTypes} from '../src';
 
@@ -707,4 +709,165 @@ export const InputPlaceholderInverse = (): React.ReactNode => {
 
 InputPlaceholderInverse.story = {
   name: 'Input - Placeholder inverse',
+};
+
+export const CustomInput: React.FC = () => {
+  const uidOne = useUID();
+  const uidTwo = useUID();
+  const uidThree = useUID();
+  const [valueOne, setValueOne] = React.useState('');
+  const [valueTwo, setValueTwo] = React.useState('');
+  const [valueThree, setValueThree] = React.useState('');
+  return (
+    <Stack orientation="vertical" spacing="space60">
+      <Box>
+        <Label htmlFor={uidOne}>Label</Label>
+        <Input
+          id={uidOne}
+          type="text"
+          placeholder="Default"
+          value={valueOne}
+          onChange={(event) => {
+            setValueOne(event.target.value);
+            action('handleChange');
+          }}
+          onFocus={action('handleFocus')}
+          onBlur={action('handleBlur')}
+          insertBefore={
+            <Text as="span" fontWeight="fontWeightSemibold">
+              $10.99
+            </Text>
+          }
+          insertAfter={
+            <Anchor href="#" display="flex">
+              <InformationIcon decorative={false} size="sizeIcon20" title="Get more info" />
+            </Anchor>
+          }
+        />
+      </Box>
+      <CustomizationProvider
+        baseTheme="default"
+        elements={{
+          INPUT: {
+            backgroundColor: 'colorBackgroundPrimaryWeakest',
+            borderRadius: 'borderRadius30',
+            boxShadow: 'none',
+            borderStyle: 'solid',
+            borderWidth: 'borderWidth10',
+            borderColor: 'colorBorderPrimary',
+          },
+          INPUT_ELEMENT: {
+            color: 'colorTextLinkStronger',
+            padding: 'space50',
+            '::placeholder': {
+              color: 'colorTextLink',
+            },
+          },
+          INPUT_PREFIX: {
+            backgroundColor: 'colorBackgroundPrimaryWeakest',
+            borderTopLeftRadius: 'borderRadius30',
+            borderBottomLeftRadius: 'borderRadius30',
+            borderRightColor: 'colorBorderPrimary',
+            padding: 'space50',
+          },
+          INPUT_SUFFIX: {
+            backgroundColor: 'colorBackgroundPrimaryWeakest',
+            borderTopRightRadius: 'borderRadius30',
+            borderBottomRightRadius: 'borderRadius30',
+            borderLeftColor: 'colorBorderPrimary',
+            padding: 'space50',
+          },
+        }}
+      >
+        <Box>
+          <Label htmlFor={uidTwo}>Label</Label>
+          <Input
+            id={uidTwo}
+            type="text"
+            placeholder="Customized"
+            value={valueTwo}
+            onChange={(event) => {
+              setValueTwo(event.target.value);
+              action('handleChange');
+            }}
+            onFocus={action('handleFocus')}
+            onBlur={action('handleBlur')}
+            insertBefore={
+              <Text as="span" fontWeight="fontWeightSemibold">
+                $10.99
+              </Text>
+            }
+            insertAfter={
+              <Anchor href="#" display="flex">
+                <InformationIcon decorative={false} size="sizeIcon20" title="Get more info" />
+              </Anchor>
+            }
+          />
+        </Box>
+      </CustomizationProvider>
+      <CustomizationProvider
+        baseTheme="default"
+        elements={{
+          NEW_INPUT: {
+            backgroundColor: 'colorBackgroundDestructiveWeakest',
+            borderRadius: 'borderRadius30',
+            boxShadow: 'none',
+            borderStyle: 'solid',
+            borderWidth: 'borderWidth20',
+            borderColor: 'colorBorderDestructive',
+          },
+          NEW_INPUT_ELEMENT: {
+            color: 'colorTextLinkDestructive',
+            padding: 'space70',
+            '::placeholder': {
+              color: 'colorTextLinkDestructive',
+            },
+          },
+          NEW_INPUT_PREFIX: {
+            backgroundColor: 'colorBackgroundDestructiveWeakest',
+            borderTopLeftRadius: 'borderRadius30',
+            borderBottomLeftRadius: 'borderRadius30',
+            borderRightColor: 'colorBorderDestructive',
+            borderWidth: 'borderWidth20',
+            padding: 'space70',
+          },
+          NEW_INPUT_SUFFIX: {
+            backgroundColor: 'colorBackgroundDestructiveWeakest',
+            borderTopRightRadius: 'borderRadius30',
+            borderBottomRightRadius: 'borderRadius30',
+            borderLeftColor: 'colorBorderDestructive',
+            borderWidth: 'borderWidth20',
+            padding: 'space70',
+          },
+        }}
+      >
+        <Box>
+          <Label htmlFor={uidThree}>Label</Label>
+          <Input
+            id={uidThree}
+            type="text"
+            placeholder="Customized element"
+            value={valueThree}
+            element="NEW_INPUT"
+            onChange={(event) => {
+              setValueThree(event.target.value);
+              action('handleChange');
+            }}
+            onFocus={action('handleFocus')}
+            onBlur={action('handleBlur')}
+            insertBefore={
+              <Text as="span" fontWeight="fontWeightSemibold">
+                $10.99
+              </Text>
+            }
+            insertAfter={
+              <Anchor href="#" display="flex">
+                <InformationIcon decorative={false} size="sizeIcon20" title="Get more info" />
+              </Anchor>
+            }
+          />
+        </Box>
+      </CustomizationProvider>
+    </Stack>
+  );
 };
