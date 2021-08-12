@@ -1,11 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import type {BoxProps} from '@twilio-paste/box';
 import {FieldWrapper} from './FauxInput';
 import {Prefix} from './Prefix';
 import {Suffix} from './Suffix';
 import type {InputBoxTypes, Variants} from './types';
 
-export interface InputBoxProps {
+export interface InputBoxProps extends Pick<BoxProps, 'element'> {
   children: NonNullable<React.ReactNode>;
   disabled?: boolean;
   hasError?: boolean;
@@ -17,9 +18,10 @@ export interface InputBoxProps {
 }
 
 const InputBox = React.forwardRef<HTMLDivElement, InputBoxProps>(
-  ({children, disabled, hasError, insertAfter, insertBefore, readOnly, type, variant, ...props}, ref) => (
+  ({children, disabled, element, hasError, insertAfter, insertBefore, readOnly, type, variant, ...props}, ref) => (
     <FieldWrapper
       disabled={disabled}
+      element={element}
       hasError={hasError}
       readOnly={readOnly}
       type={type}
@@ -28,13 +30,13 @@ const InputBox = React.forwardRef<HTMLDivElement, InputBoxProps>(
       {...props}
     >
       {insertBefore && (
-        <Prefix disabled={disabled} variant={variant}>
+        <Prefix disabled={disabled} element={element} variant={variant}>
           {insertBefore}
         </Prefix>
       )}
       {children}
       {insertAfter && (
-        <Suffix disabled={disabled} variant={variant}>
+        <Suffix disabled={disabled} element={element} variant={variant}>
           {insertAfter}
         </Suffix>
       )}
@@ -44,19 +46,18 @@ const InputBox = React.forwardRef<HTMLDivElement, InputBoxProps>(
 
 InputBox.displayName = 'InputBox';
 
-if (process.env.NODE_ENV === 'development') {
-  InputBox.propTypes = {
-    children: PropTypes.node.isRequired,
-    disabled: PropTypes.bool,
-    hasError: PropTypes.bool,
-    insertAfter: PropTypes.node,
-    insertBefore: PropTypes.node,
-    readOnly: PropTypes.bool,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    type: PropTypes.oneOf(['text', 'email', 'hidden', 'number', 'password', 'search', 'tel', 'date', 'time']) as any,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    variant: PropTypes.oneOf(['default', 'inverse']) as any,
-  };
-}
+InputBox.propTypes = {
+  children: PropTypes.node.isRequired,
+  element: PropTypes.string,
+  disabled: PropTypes.bool,
+  hasError: PropTypes.bool,
+  insertAfter: PropTypes.node,
+  insertBefore: PropTypes.node,
+  readOnly: PropTypes.bool,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  type: PropTypes.oneOf(['text', 'email', 'hidden', 'number', 'password', 'search', 'tel', 'date', 'time']) as any,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  variant: PropTypes.oneOf(['default', 'inverse']) as any,
+};
 
 export {InputBox};

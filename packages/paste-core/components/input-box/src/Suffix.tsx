@@ -1,16 +1,17 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import {Box} from '@twilio-paste/box';
-import {BackgroundColor, BorderColor} from '@twilio-paste/style-props';
-import {Variants} from './types';
+import type {BoxProps} from '@twilio-paste/box';
+import type {BackgroundColor, BorderColor} from '@twilio-paste/style-props';
+import type {Variants} from './types';
 
-export interface SuffixProps {
+export interface SuffixProps extends Pick<BoxProps, 'element'> {
   children: NonNullable<React.ReactNode>;
   disabled?: boolean;
   variant?: Variants;
 }
 
-const Suffix = React.forwardRef<HTMLDivElement, SuffixProps>(({children, disabled, variant}, ref) => {
+const Suffix = React.forwardRef<HTMLDivElement, SuffixProps>(({children, disabled, element, variant}, ref) => {
   let backgroundColor = 'colorBackground' as BackgroundColor;
   let borderColor = 'colorBorderWeaker' as BorderColor;
   if (disabled && variant === 'inverse') {
@@ -32,6 +33,7 @@ const Suffix = React.forwardRef<HTMLDivElement, SuffixProps>(({children, disable
       borderLeftWidth="borderWidth10"
       borderTopRightRadius="borderRadius20"
       display="flex"
+      element={`${element}_SUFFIX`}
       lineHeight="lineHeight20"
       padding="space30"
       ref={ref}
@@ -43,12 +45,11 @@ const Suffix = React.forwardRef<HTMLDivElement, SuffixProps>(({children, disable
 
 Suffix.displayName = 'Suffix';
 
-if (process.env.NODE_ENV === 'development') {
-  Suffix.propTypes = {
-    children: PropTypes.node.isRequired,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    variant: PropTypes.oneOf(['default', 'inverse']) as any,
-  };
-}
+Suffix.propTypes = {
+  children: PropTypes.node.isRequired,
+  element: PropTypes.string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  variant: PropTypes.oneOf(['default', 'inverse']) as any,
+};
 
 export {Suffix};
